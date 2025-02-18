@@ -1,0 +1,861 @@
+{
+	"info": {
+		"_postman_id": "28a0523c-3ada-4939-bb2a-886d3935328b",
+		"name": "Hospital Appointment System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38783732"
+	},
+	"item": [
+		{
+			"name": "Doctor",
+			"item": [
+				{
+					"name": "View Doctors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/doctor/all/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"doctor",
+								"all",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "View Doctors",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/doctor/all/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"doctor",
+										"all",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 18 Feb 2025 08:49:40 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "820"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"67b2d07ab437cbf046e26ee7\",\n        \"name\": \"Dr. Lisa Taylor\",\n        \"specialization\": \"Gastroenterologist\",\n        \"available_slots\": [\n            \"6:00 PM\",\n            \"5:00 PM\"\n        ]\n    },\n    {\n        \"_id\": \"67b44558ca4a64d61027d406\",\n        \"name\": \"Dr. Alice\",\n        \"specialization\": \"Cardiologist\",\n        \"available_slots\": [\n            \"9:00 AM\",\n            \"9:30 AM\",\n            \"10:00 AM\"\n        ]\n    },\n    {\n        \"_id\": \"67b44560ca4a64d61027d407\",\n        \"name\": \"Dr. Mark\",\n        \"specialization\": \"Dermatologist\",\n        \"available_slots\": [\n            \"11:00 AM\",\n            \"11:30 AM\",\n            \"12:00 PM\"\n        ]\n    },\n    {\n        \"_id\": \"67b44567ca4a64d61027d408\",\n        \"name\": \"Dr. Sarah\",\n        \"specialization\": \"Pediatrician\",\n        \"available_slots\": [\n            \"2:00 PM\",\n            \"2:30 PM\",\n            \"3:00 PM\"\n        ]\n    },\n    {\n        \"_id\": \"67b4456eca4a64d61027d409\",\n        \"name\": \"Dr. John\",\n        \"specialization\": \"Orthopedist\",\n        \"available_slots\": [\n            \"3:30 PM\",\n            \"4:00 PM\",\n            \"4:30 PM\"\n        ]\n    },\n    {\n        \"_id\": \"67b44576ca4a64d61027d40a\",\n        \"name\": \"Dr. Emily\",\n        \"specialization\": \"Neurologist\",\n        \"available_slots\": [\n            \"6:00 PM\",\n            \"6:30 PM\",\n            \"7:00 PM\"\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Check Doctor Availability",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/doctor/availability/67b2d07ab437cbf046e26ee7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"doctor",
+								"availability",
+								"67b2d07ab437cbf046e26ee7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Check Doctor Availability",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/doctor/availability/67b2d07ab437cbf046e26ee7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"doctor",
+										"availability",
+										"67b2d07ab437cbf046e26ee7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 18 Feb 2025 08:49:50 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "80"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"doctor_id\": \"67b2d07ab437cbf046e26ee7\",\n    \"available_slots\": [\n        \"6:00 PM\",\n        \"5:00 PM\"\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Patient",
+			"item": [
+				{
+					"name": "View Patients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/patient/all/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"patient",
+								"all",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "VIew Patients",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/patient/all/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"patient",
+										"all",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 18 Feb 2025 08:49:56 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "718"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"67b2d11ab437cbf046e26ee8\",\n        \"name\": \"Alice Johnson\",\n        \"age\": 30,\n        \"insurance_type\": \"Premium\",\n        \"insurance_validity\": true\n    },\n    {\n        \"_id\": \"67b2fc2e4f741206c59cfb96\",\n        \"name\": \"Nayana Josh\",\n        \"age\": 55,\n        \"insurance_type\": \"Standard\",\n        \"insurance_validity\": true\n    },\n    {\n        \"_id\": \"67b322dd7885bd2b2b1ac93e\",\n        \"name\": \"Nayana Josh\",\n        \"age\": 55,\n        \"insurance_type\": \"Standard\",\n        \"insurance_validity\": true\n    },\n    {\n        \"_id\": \"67b44618ca4a64d61027d40b\",\n        \"name\": \"Sarah Williams\",\n        \"age\": 42,\n        \"insurance_type\": \"Standard\",\n        \"insurance_validity\": true\n    },\n    {\n        \"_id\": \"67b44625ca4a64d61027d40c\",\n        \"name\": \"John Brown\",\n        \"age\": 50,\n        \"insurance_type\": \"Standard\",\n        \"insurance_validity\": false\n    },\n    {\n        \"_id\": \"67b4462cca4a64d61027d40d\",\n        \"name\": \"Emily Jones\",\n        \"age\": 38,\n        \"insurance_type\": \"Premium\",\n        \"insurance_validity\": true\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Add Doctors",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTczOTg3MTExMX0.p6O7z-5kBmkEWX8LEN4oyXg9egTMUmnPr9IAdkSy26k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Dr. Theoder Emily\",\n  \"specialization\": \"Neurologist\",\n  \"available_slots\": [\"6:00 PM\", \"6:30 PM\", \"7:00 PM\"]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/doctor/add/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"doctor",
+								"add",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Doctors",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Dr. Theoder Emily\",\n  \"specialization\": \"Neurologist\",\n  \"available_slots\": [\"6:00 PM\", \"6:30 PM\", \"7:00 PM\"]\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/doctor/add/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"doctor",
+										"add",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 18 Feb 2025 09:02:47 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "78"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Doctor added successfully\",\n    \"doctor_id\": \"67b44cb8ca4a64d61027d40f\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTczOTg3MTExMX0.p6O7z-5kBmkEWX8LEN4oyXg9egTMUmnPr9IAdkSy26k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Emily Jones\",\n  \"age\": 38,\n  \"insurance_type\": \"Premium\",\n  \"insurance_validity\": true\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/patient/add/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"patient",
+								"add",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Patients",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Emily Jones\",\n  \"age\": 38,\n  \"insurance_type\": \"Premium\",\n  \"insurance_validity\": true\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/patient/add/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"patient",
+										"add",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 18 Feb 2025 09:02:08 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "80"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Patient added successfully\",\n    \"patient_id\": \"67b44c91ca4a64d61027d40e\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Admin Login",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/admin/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"admin",
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Admin Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/admin/login/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"admin",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 18 Feb 2025 09:01:50 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "165"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTczOTg3MTExMX0.p6O7z-5kBmkEWX8LEN4oyXg9egTMUmnPr9IAdkSy26k\",\n    \"token_type\": \"bearer\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Appointment",
+			"item": [
+				{
+					"name": "View all Appointments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/appointment/appointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"appointment",
+								"appointments"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "View Appointments",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/appointment/appointments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"appointment",
+										"appointments"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 18 Feb 2025 09:03:33 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "344"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"appointments\": [\n        {\n            \"appointment_id\": \"67b4445cca4a64d61027d405\",\n            \"patient_id\": \"67b2fc2e4f741206c59cfb96\",\n            \"doctor_id\": \"67b2d07ab437cbf046e26ee7\",\n            \"appointment_time\": \"5:30 PM\",\n            \"status\": \"confirmed\",\n            \"priority\": \"Normal\",\n            \"symptoms\": [\n                \"high BP\"\n            ],\n            \"preferred_language\": \"English\",\n            \"created_at\": \"2025-02-18T08:27:08.220000\",\n            \"follow_up_suggested\": \"2025-02-25\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Book Appointment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"patient_id\": \"67b2fc2e4f741206c59cfb96\",\n  \"doctor_id\": \"67b2d07ab437cbf046e26ee7\",\n  \"appointment_date\": \"2025-02-13\",\n  \"appointment_time\": \"5:30 PM\",\n  \"is_emergency\": false,\n  \"insurance_type\": \"Standard\",\n  \"symptoms\": [\"high BP\"],\n  \"preferred_language\": \"English\",\n  \"previous_appointment_id\": \"2025-02-12\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/appointment/book/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"appointment",
+								"book",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Book Appointment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"patient_id\": \"67b2fc2e4f741206c59cfb96\",\n  \"doctor_id\": \"67b2d07ab437cbf046e26ee7\",\n  \"appointment_date\": \"2025-02-13\",\n  \"appointment_time\": \"5:30 PM\",\n  \"is_emergency\": false,\n  \"insurance_type\": \"Standard\",\n  \"symptoms\": [\"high BP\"],\n  \"preferred_language\": \"English\",\n  \"previous_appointment_id\": \"2025-02-12\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/appointment/book/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"appointment",
+										"book",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 18 Feb 2025 08:27:07 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "201"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"confirmed\",\n    \"appointment_id\": \"67b4445cca4a64d61027d405\",\n    \"doctor\": \"Dr. Lisa Taylor\",\n    \"patient\": \"Nayana Josh\",\n    \"appointment_time\": \"5:30 PM\",\n    \"priority\": \"Normal\",\n    \"follow_up_suggested\": \"2025-02-25\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Cancel Appointment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"appointment_id\": \"67b44442ca4a64d61027d404\",\n   \"cancellation_time\": \"2025-02-12T15:59:00\"\n  \n \n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/appointment/cancel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"appointment",
+								"cancel"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Cancel Appointment",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"appointment_id\": \"67b44442ca4a64d61027d404\",\n   \"cancellation_time\": \"2025-02-12T15:59:00\"\n  \n \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/appointment/cancel",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"appointment",
+										"cancel"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 18 Feb 2025 08:28:19 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "43"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"cancelled\",\n    \"cancellation_fee\": 0\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Insurance",
+			"item": [
+				{
+					"name": "Validate insurance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"insurance_type\": \"Standard\",\n  \"patient_id\": \"67b322dd7885bd2b2b1ac93e\"\n  \n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/insurance/validate_insurance",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"insurance",
+								"validate_insurance"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Validate insurance",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"insurance_type\": \"Standard\",\n  \"patient_id\": \"67b322dd7885bd2b2b1ac93e\"\n  \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/insurance/validate_insurance",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"insurance",
+										"validate_insurance"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "date",
+									"value": "Tue, 18 Feb 2025 09:04:43 GMT"
+								},
+								{
+									"key": "server",
+									"value": "uvicorn"
+								},
+								{
+									"key": "content-length",
+									"value": "112"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"patient_id\": \"67b322dd7885bd2b2b1ac93e\",\n    \"insurance_type\": \"Standard\",\n    \"priority\": \"Low\",\n    \"insurance_validity\": true\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
